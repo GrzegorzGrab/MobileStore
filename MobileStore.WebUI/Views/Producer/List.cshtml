@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MobileStore.Domain.Entities.Producer>
+@{
+    ViewBag.Title = "Producent";
+}
+
+@foreach (var p in Model)
+{
+    <div class="item">
+        <h3>@p.ProducerName</h3>
+    </div>
+}
+<h2>List</h2>
+

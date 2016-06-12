@@ -1,0 +1,8 @@
+c:\users\cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\obj\Debug\MobileStore.Domain.csprojResolveAssemblyReference.cache
+c:\users\cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\bin\Debug\MobileStore.Domain.dll
+c:\users\cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\bin\Debug\MobileStore.Domain.pdb
+c:\users\cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\obj\Debug\MobileStore.Domain.dll
+c:\users\cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\obj\Debug\MobileStore.Domain.pdb
+C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\bin\Debug\MobileStore.Domain.dll.config
+C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\bin\Debug\EntityFramework.dll
+C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\ClassLibrary1\bin\Debug\EntityFramework.xml
