@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileStore.Domain", "Class
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileStore.WebUI", "MobileStore.WebUI\MobileStore.WebUI.csproj", "{3A8668E8-0135-4246-9671-D9233B54371F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileStore.UnitTests", "MobileStore.UnitTests\MobileStore.UnitTests.csproj", "{B985F7D7-DEC8-4F80-AE76-5648991CBCFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3A8668E8-0135-4246-9671-D9233B54371F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A8668E8-0135-4246-9671-D9233B54371F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A8668E8-0135-4246-9671-D9233B54371F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B985F7D7-DEC8-4F80-AE76-5648991CBCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B985F7D7-DEC8-4F80-AE76-5648991CBCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B985F7D7-DEC8-4F80-AE76-5648991CBCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B985F7D7-DEC8-4F80-AE76-5648991CBCFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

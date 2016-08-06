@@ -1,13 +1,17 @@
-﻿@model IEnumerable<MobileStore.Domain.Entities.Producer>
+﻿@model MobileStore.WebUI.Models.ProducerListViewModel
 @{
     ViewBag.Title = "Producent";
 }
 
-@foreach (var p in Model)
+<h2>List</h2>
+
+@foreach (var p in Model.Producers)
 {
     <div class="item">
         <h3>@p.ProducerName</h3>
     </div>
 }
-<h2>List</h2>
 
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }));
+</div>

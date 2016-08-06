@@ -1,0 +1,74 @@
+﻿@model MobileStore.WebUI.Models.ProductModelViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model.ProductModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProducerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScreenSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer.ProducerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType.ProductTypeName)
+            </td>
+            <td>
+                @Html.ActionLink(item.ProductModelName, "Edit", new { item.ProductModelID })
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ProductModelID }) 
+            </td>
+            <td>
+                @using (Html.BeginForm("Delete", "AdminProductModel"))
+                {
+                    @Html.Hidden("ProductModelID", item.ProductModelID)
+                    <input type="submit" value="Usuń" />
+                }
+            </td>          
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@model MobileStore.Domain.Entities.Producer
+@{
+    Layout = null;
+}
+
+<h1>Edycja @Model.ProducerName</h1>
+
+@using (Html.BeginForm("Edit","AdminProducer"))
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Zapisz" />
+    @Html.ActionLink("Anuluj","Index")
+}

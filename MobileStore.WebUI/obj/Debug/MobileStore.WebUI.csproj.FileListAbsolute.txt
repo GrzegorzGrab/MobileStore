@@ -43,3 +43,5 @@ C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStor
 C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStore.WebUI\bin\EntityFramework.xml
 C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStore.WebUI\obj\Debug\MobileStore.WebUI.Properties.Resources.resources
 C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStore.WebUI\obj\Debug\MobileStore.WebUI.csproj.GenerateResource.Cache
+C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStore.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Cezet-user\documents\visual studio 2015\Projects\MobileStore\MobileStore.WebUI\bin\EntityFramework.SqlServer.xml

@@ -32,19 +32,24 @@ namespace MobileStore.WebUI.Infrastructure
 
         private void AddBindings()
         {
-           
-            Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product>
-            {
-                new Product { Name = "Piłka nożna", Price = 25 },
-                new Product { Name = "Deska surfingowa", Price = 179 },
-                new Product { Name = "Buty do biegania", Price = 95 }
-            }.AsQueryable()
-            );
-            ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
             /*
-           ninjectKernel.Bind<IProducerRepository>().To<EFProducerRepository>();
-           */
+             Mock<IProductRepository> mock = new Mock<IProductRepository>();
+             mock.Setup(m => m.Products).Returns(new List<Product>
+             {
+                 new Product { Name = "Piłka nożna", Price = 25 },
+                 new Product { Name = "Deska surfingowa", Price = 179 },
+                 new Product { Name = "Buty do biegania", Price = 95 }
+             }.AsQueryable()
+             );
+             ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
+             */
+            ninjectKernel.Bind<IProducerRepository>().To<EFProducerRepository>();
+            ninjectKernel.Bind<IProductTypeRepository>().To<EFProductTypeRepository>();
+            ninjectKernel.Bind<IProductModelRepository>().To<EFProductModelRepository>();
+            ninjectKernel.Bind<ISellerRepository>().To<EFSellerRepository>();
+            ninjectKernel.Bind<ISimLockerRepository>().To<EFSimLockerRepository>();
+            ninjectKernel.Bind<ICommodityRepository>().To<EFCommodityRepository>();
+            ninjectKernel.Bind<IInvoiceRepository>().To<EFInvoiceRepository>();
         }
     }
 }
