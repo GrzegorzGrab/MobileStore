@@ -1,0 +1,51 @@
+﻿<div id="sidebar-wrapper">
+    <div>
+        <img alt="" src="~/Content/mobileStoreLogo1.jpg" id="logo" />
+    </div>
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            @Html.ActionLink("Faktura", "Index","Invoice")
+        </li>
+        <li class="sidebar-brand">
+            <div class="dropdown">
+                <a class=""  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Producent
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Lista producentów", "Index", "AdminProducer")</li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+            
+        </li>
+        <li class="sidebar-brand">
+            @Html.ActionLink("Model", "Index", "AdminProductModel")
+        </li>
+        <li class="sidebar-brand">
+            @Html.ActionLink("Typ", "Index", "AdminProductType")
+        </li>
+        <li class="sidebar-brand">
+            @Html.ActionLink("Sprzedawca", "Index", "AdminSeller")
+        </li>
+        <li class="sidebar-brand">
+            @Html.ActionLink("Sim Lock", "Index", "AdminSimLocker")
+        </li>
+        <li class="sidebar-brand">
+            @Html.ActionLink("Towar", "Index", "Commodity")
+        </li>
+    </ul>
+    
+</div>
+<a id="menu-toggle" class="btn btn-default" href="#menu-toggle"><span id="span-toggle" class="glyphicon glyphicon-arrow-left"></span></a>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $('#span-toggle').toggleClass("glyphicon glyphicon-arrow-right");
+        $('#span-toggle').toggleClass("glyphicon glyphicon-arrow-left");
+    });
+</script>
