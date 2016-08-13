@@ -57,5 +57,12 @@ namespace MobileStore.Domain.Concrete
             SelectList ProducerList = new SelectList(producersQuery, "ProducerID", "ProducerName", selectedProducer); 
             return ProducerList;
         }
+
+        //implementacja metody do wyświetlania szczegółów producenta
+        public Producer ProducerDetails (int producerId)
+        {
+            Producer producerDetails = context.Producers.Find(producerId);
+            return producerDetails;
+        }
     }
 }

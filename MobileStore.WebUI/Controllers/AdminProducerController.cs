@@ -63,5 +63,12 @@ namespace MobileStore.WebUI.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        //dla widoku wyświetlającego szczegóły producenta
+        public ViewResult Details (int producerId)
+        {
+            Producer producer = repository.ProducerDetails(producerId);
+            return View("Details", producer);
+        }
     }
 }

@@ -36,13 +36,13 @@
                 @Html.ActionLink(item.ProducerName,"Edit", new { item.ProducerID})
             </td>
             <td> 
-                @Html.ActionLink("Details", "Details", new { id=item.ProducerID }) |
+                @Html.ActionLink("Details", "Details", new { item.ProducerID }) 
             </td>
             <td>
                 @using (Html.BeginForm("Delete", "AdminProducer"))
                 {
                     @Html.Hidden("ProducerID", item.ProducerID)
-                    <input type="submit" value="Usuń" />
+                    <input type="submit" value="Usuń" class="btn btn-default"/>
                 }
             </td>
         </tr>

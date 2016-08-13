@@ -19,5 +19,8 @@ namespace MobileStore.Domain.Abstract
 
         //metoda wykorzystywana do zapełniania list rozwijanych z nazwą producenta
         SelectList SelectListProducer(object selectedProducer = null);
+
+        //metoda do wyświetlanie szczegółów producenta
+        Producer ProducerDetails(int producerId);
     }
 }
