@@ -50,6 +50,7 @@ namespace MobileStore.WebUI.Infrastructure
             ninjectKernel.Bind<ISimLockerRepository>().To<EFSimLockerRepository>();
             ninjectKernel.Bind<ICommodityRepository>().To<EFCommodityRepository>();
             ninjectKernel.Bind<IInvoiceRepository>().To<EFInvoiceRepository>();
+            ninjectKernel.Bind<ISaleRepository>().To<EFSaleRepository>();
         }
     }
 }

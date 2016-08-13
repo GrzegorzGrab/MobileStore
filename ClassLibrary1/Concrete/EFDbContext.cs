@@ -17,5 +17,6 @@ namespace MobileStore.Domain.Concrete
         public DbSet<SimLocker> SimLockers { get; set; }
         public DbSet<Commodity> Commodities { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Sale> Sales { get; set; }
     }
 }

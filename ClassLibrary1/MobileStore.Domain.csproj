@@ -80,6 +80,7 @@
     <Compile Include="Abstract\IProductModelRepository.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Abstract\IProductTypeRepository.cs" />
+    <Compile Include="Abstract\ISaleRepository.cs" />
     <Compile Include="Abstract\ISellerRepository.cs" />
     <Compile Include="Abstract\ISimLockerRepository.cs" />
     <Compile Include="Concrete\EFCommodityRepository.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Concrete\EFProductModelRepository.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EFProductTypeRepository.cs" />
+    <Compile Include="Concrete\EFSaleRepository.cs" />
     <Compile Include="Concrete\EFSellerRepository.cs" />
     <Compile Include="Concrete\EFSimLockerRepository.cs" />
     <Compile Include="Entities\Commodity.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductModel.cs" />
     <Compile Include="Entities\ProductType.cs" />
+    <Compile Include="Entities\Sale.cs" />
     <Compile Include="Entities\Seller.cs" />
     <Compile Include="Entities\SimLocker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
