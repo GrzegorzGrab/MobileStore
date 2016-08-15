@@ -4,7 +4,16 @@
     </div>
     <ul class="sidebar-nav">
         <li class="sidebar-brand">
-            @Html.ActionLink("Faktura", "Index","Invoice")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Faktura
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Wystawione faktury", "Index", "Invoice")</li>
+                    <li>@Html.ActionLink("Utwórz nową fakturę", "Create", "Invoice")</li>
+                </ul>
+            </div>
         </li>
         <li class="sidebar-brand">
             <div class="dropdown">
@@ -20,19 +29,64 @@
             
         </li>
         <li class="sidebar-brand">
-            @Html.ActionLink("Model", "Index", "AdminProductModel")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Model
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Dostępne modele", "Index", "AdminProductModel")</li>
+                    <li>@Html.ActionLink("Dodaj nowy model", "Create", "AdminProductModel")</li>
+                </ul>
+            </div>
         </li>
         <li class="sidebar-brand">
-            @Html.ActionLink("Typ", "Index", "AdminProductType")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Typ
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Dostępne typu produktów", "Index", "AdminProductType")</li>
+                    <li>@Html.ActionLink("Dodaj nowy typ", "Create", "AdminProductType")</li>
+                </ul>
+            </div>
         </li>
         <li class="sidebar-brand">
-            @Html.ActionLink("Sprzedawca", "Index", "AdminSeller")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Typ
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Lista sprzedawców", "Index", "AdminSeller")</li>
+                    <li>@Html.ActionLink("Dodaj nowego sprzedawcę", "Create", "AdminSeller")</li>
+                </ul>
+            </div>
         </li>
         <li class="sidebar-brand">
-            @Html.ActionLink("Sim Lock", "Index", "AdminSimLocker")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Sim Lock
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Lista blokad Sim Lock", "Index", "AdminSimLocker")</li>
+                    <li>@Html.ActionLink("Dodaj nową blokadę Sim Lock", "Create", "AdminSimLocker")</li>
+                </ul>
+            </div>
         </li>
         <li class="sidebar-brand">
-            @Html.ActionLink("Towar", "Index", "Commodity")
+            <div class="dropdown">
+                <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Towary
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li>@Html.ActionLink("Lista wszystkich towarów", "Index", "Commodity")</li>
+                    <li>@Html.ActionLink("Dodaj nowy towar", "Create", "Commodity")</li>
+                </ul>
+            </div>
         </li>
     </ul>
     
