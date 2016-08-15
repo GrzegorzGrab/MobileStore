@@ -1,0 +1,15 @@
+﻿@model Invoice
+@using MobileStore.Domain.Entities
+@{
+    ViewBag.Title = "AddSale";
+}
+
+<h2>@Model.InvoiceNumber</h2>
+
+<div>
+        @{Html.RenderAction("AvailableCommodities", "Invoice");}
+</div>
+
+<div>
+    @{ Html.RenderAction("InvoiceSale", "Invoice", Model.InvoiceID);}
+</div>

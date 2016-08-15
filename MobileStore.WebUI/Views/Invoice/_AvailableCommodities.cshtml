@@ -1,0 +1,74 @@
+﻿@model IQueryable<MobileStore.WebUI.Models.CommodityInvoiceViewModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            CommodityID
+        </th>
+        <th>
+            Sprzedawca
+        </th>
+        <th>
+            Producent
+        </th>
+        <th>
+            Data zakupu
+        </th>
+        <th>
+            Cena zakupu
+        </th>
+        <th>
+            Stan
+        </th>
+        <th>
+            Opis
+        </th>
+        <th>
+            Sim Lock
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commodity.CommodityID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellerFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProducerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commodity.PurchaseDate    )
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commodity.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commodity.Condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commodity.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SimLockName)
+            </td>
+            <td>
+                @using (Html.BeginForm("Create", "Sale",FormMethod.Get))
+                {
+                           @Html.Hidden("commodityId", item.Commodity.CommodityID)
+                           @Html.Hidden("invoiceId",item.InvoiceID)
+                            <input type = "submit" value = "Dodaj do fakruty" class="btn btn-default" />
+                }
+            </td>
+        </tr>
+    }
+
+</table>

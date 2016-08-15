@@ -144,6 +144,7 @@
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\CommodityInvoiceViewModel.cs" />
     <Compile Include="Models\CommodityListViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\ProducerListViewModel.cs" />
@@ -186,6 +187,10 @@
     <Content Include="Views\Home\Navigation.cshtml" />
     <Content Include="Views\AdminProducer\Details.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
+    <Content Include="Views\Invoice\AddSale.cshtml" />
+    <Content Include="Views\Invoice\_AvailableCommodities.cshtml" />
+    <Content Include="Views\Invoice\_InvoiceSale.cshtml" />
+    <Content Include="Views\Sale\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
