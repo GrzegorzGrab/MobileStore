@@ -22,6 +22,7 @@ namespace MobileStore.Domain.Concrete
         {
             if (commodity.CommodityID == 0)
             {
+                commodity.IsAvailable = true; //zawsze nowy towar jest dostępny do sprzedazy
                 context.Commodities.Add(commodity);
             }
             else
@@ -38,6 +39,17 @@ namespace MobileStore.Domain.Concrete
                 }
             }
             context.SaveChanges();
+        }
+
+        public void ChangeCommodityAvailability (int commodityId)
+        {
+            if (commodityId!= 0)
+            {
+                Commodity updatedCommodity = new Commodity();
+                updatedCommodity = context.Commodities.Find(commodityId);
+                updatedCommodity.IsAvailable = false;
+                context.SaveChanges();
+            }
         }
     }
 }

@@ -50,6 +50,8 @@ namespace MobileStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 iSaleRepository.SaveSale(sale);
+                //zmiana dostępności towaru w przypadku sprzedaży   
+                iCommodityRepository.ChangeCommodityAvailability(sale.CommodityID);
                 return RedirectToAction("AddSale", "Invoice", new { invoiceId = sale.InvoiceID });
             }
             else

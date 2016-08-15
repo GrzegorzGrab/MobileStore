@@ -4,17 +4,8 @@
    // Layout = null;
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <h4>@TempData["title"]</h4>
     <table class="table">
         <tr>
             <th>
@@ -40,6 +31,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SimLocker.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.IsAvailable)
             </th>
             <th></th>
         </tr>
@@ -71,6 +65,9 @@
                 @Html.DisplayFor(modelItem => item.SimLocker.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem=>item.IsAvailable)
+            </td>
+            <td>
                 @Html.ActionLink("Edit", "Edit", new { item.CommodityID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.CommodityID }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.CommodityID })
@@ -79,5 +76,4 @@
     }
     
     </table>
-</body>
-</html>
+

@@ -96,17 +96,9 @@ namespace MobileStore.WebUI.Controllers
 
         public PartialViewResult AvailableCommodities(int invoiceID)
         {
-            /*
-            CommodityInvoiceViewModel CommoditiesViewModel = new CommodityInvoiceViewModel {
-                Commodities = iCommodityRepository.Commodities,
-                InvoiceID = invoiceID
-            };
-
-            CommoditiesViewModel.Commodities=CommoditiesViewModel.Commodities.Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
-            //commodityInvoiceViewModel. = iCommodityRepository.Commodities;
-            */
+           
             List<CommodityInvoiceViewModel> commodityInvoiceViewModelList = new List<CommodityInvoiceViewModel>();
-            IQueryable<Commodity> commodities = iCommodityRepository.Commodities.Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
+            IQueryable<Commodity> commodities = iCommodityRepository.Commodities.Where(c=>c.IsAvailable==true).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
 
             foreach( Commodity com in commodities)
             {

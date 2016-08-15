@@ -13,5 +13,8 @@ namespace MobileStore.Domain.Abstract
 
         //zapisywanie towaru w bazie
         void SaveCommodity(Commodity commodity);
+
+        //sprzedaz towaru - zmiana pola IsAvailale z true na false
+        void ChangeCommodityAvailability(int commodityId);
     }
 }

@@ -37,12 +37,7 @@ namespace MobileStore.WebUI.Controllers
         
         public ViewResult Index()
         {
-            //Commodity commmodity =repository.Commodities.FirstOrDefault(x=>x.CommodityID==1);
-            // CommodityHelpers commodityHelper = new CommodityHelpers();
-            //commodityHelper.FullCommoditiesInfo(commmodity);
-            //Commodity com = repository.Commodities.FirstOrDefault(x => x.CommodityID == 1);
-            //CommodityListViewModel comListViewModel = new CommodityListViewModel(com);
-            //comListViewModel.SellerName = repository.GetSellerName(com.SellerID);
+            TempData["title"] = "Wszystkie towary";
             return View(iCommodityRepository.Commodities.Include(s=>s.Seller).Include(l=>l.SimLocker).Include(m=>m.ProductModel).Include(p=>p.ProductModel.Producer));
         }
 
@@ -77,6 +72,20 @@ namespace MobileStore.WebUI.Controllers
             ViewBag.SellerID = iSellerRepository.SelectListSeller();
             ViewBag.SimLockerID = iSimLockerRepository.SelectListSimLocker();
             return View("Edit", new Commodity());
+        }
+
+        //Akcja prezentująca dostępne towary
+        public ViewResult AvailableCommodities()
+        {
+            TempData["title"] = "Dostępne towary";
+            return View("Index",iCommodityRepository.Commodities.Where(c=>c.IsAvailable==true).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer));
+        }
+
+        //Akcja prezentująca niedostępne towary
+        public ViewResult UnAvailableCommodities()
+        {
+            TempData["title"] = "Sprzedane towary";
+            return View("Index", iCommodityRepository.Commodities.Where(c => c.IsAvailable == false).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer));
         }
     }
 }

@@ -29,6 +29,7 @@
                 @Html.DisplayFor(modelItem => item.InvoiceNumber)
             </td>
             <td>
+                @Html.ActionLink("Dodaj ", "AddSale", new { item.InvoiceID })
                 @Html.ActionLink("Edit", "Edit", new { item.InvoiceID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.InvoiceID }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.InvoiceID })

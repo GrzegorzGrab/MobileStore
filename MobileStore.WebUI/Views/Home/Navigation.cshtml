@@ -55,7 +55,7 @@
         <li class="sidebar-brand">
             <div class="dropdown">
                 <a class="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Typ
+                    Sprzedawcy
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -84,6 +84,8 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li>@Html.ActionLink("Lista wszystkich towarów", "Index", "Commodity")</li>
+                    <li>@Html.ActionLink("Lista dostępnych towarów", "AvailableCommodities", "Commodity")</li>
+                    <li>@Html.ActionLink("Lista sprzedanych towarów", "UnAvailableCommodities", "Commodity")</li>
                     <li>@Html.ActionLink("Dodaj nowy towar", "Create", "Commodity")</li>
                 </ul>
             </div>
