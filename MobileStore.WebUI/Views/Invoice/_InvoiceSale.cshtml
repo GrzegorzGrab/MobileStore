@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<MobileStore.Domain.Entities.Sale>
 @using MobileStore.Domain.Entities
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<hr />
+<h5>Pozycje na fakturze</h5>
+
 <table class="table">
     <tr>
         <th>
-        </th>
-        <th>
+            @Html.DisplayNameFor(model=>model.CommodityID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SalesDate)
@@ -22,19 +21,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-        </td>
-        <td>
+            @Html.DisplayFor(modelItem=>item.CommodityID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SalesDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SalesPrice)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SaleID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SaleID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SaleID })
         </td>
     </tr>
 }

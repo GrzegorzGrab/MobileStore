@@ -4,8 +4,9 @@
     ViewBag.Title = "AddSale";
 }
 
-<h2>@Model.InvoiceNumber</h2>
-
+<h2>Faktura</h2>
+<h4>Nr: @Model.InvoiceNumber</h4>
+<hr />
 <div>
         @{Html.RenderAction("AvailableCommodities", "Invoice");}
 </div>

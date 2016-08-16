@@ -9,11 +9,14 @@ namespace MobileStore.Domain.Entities
 {
     public class Commodity
     {
+
+        [Display(Name ="Towar Id")]
         public int CommodityID { get; set; }
 
         public int ProductModelID { get; set; }
         public virtual ProductModel ProductModel { get; set; }
 
+        
         public int SellerID { get; set; }
         public virtual Seller Seller { get; set; }
 
