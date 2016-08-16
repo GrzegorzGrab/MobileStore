@@ -11,11 +11,13 @@ namespace MobileStore.Domain.Entities
     {
         public int InvoiceID { get; set; }
 
-        /*
+        
         [Display(Name="Numer faktury")]
         [Required(ErrorMessage ="Proszę podać numer faktury")]
-        */
         public string  InvoiceNumber { get; set; }
+
+        [Display(Name ="Kwota faktury")]
+        [DisplayFormat(DataFormatString ="{0:c}")]
         public decimal InvoiceAmount { get; set; }
     }
 }

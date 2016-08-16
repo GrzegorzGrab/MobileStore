@@ -17,7 +17,13 @@ namespace MobileStore.Domain.Entities
         public int SellerID { get; set; }
         public virtual Seller Seller { get; set; }
 
+        [Display(Name="Data zakupu")]
+        [Required(ErrorMessage ="Proszę wybrać datę zakupu")]
+        [DataType(DataType.Date)]
         public System.DateTime PurchaseDate { get; set; }
+
+        [Display(Name ="Kwota zakupu")]
+        [Required(ErrorMessage ="Proszę podać kwotę zakupu")]
         public decimal PurchasePrice { get; set; }
 
         [Required(ErrorMessage="Proszę podać stan towaru")]
