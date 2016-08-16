@@ -22,6 +22,7 @@ namespace MobileStore.Domain.Concrete
         {
             if (invoice.InvoiceID == 0)
             {
+                invoice.InvoiceAmount = 0; //kwota noweh faktury zawsze 0; 
                 context.Invoices.Add(invoice);
             }
             else
@@ -31,6 +32,18 @@ namespace MobileStore.Domain.Concrete
                 {
                     dbEntry.InvoiceNumber = invoice.InvoiceNumber;
                 }
+            }
+            context.SaveChanges();
+        }
+
+         //aktualizacja kwoty faktury w przypdku rejestracji sprzedazy towaru
+        public void EditInvoiceAmount(int invoiceId)
+        {
+            decimal newInvoiceAmount = context.Sales.Where(s => s.InvoiceID == invoiceId).Sum(s => s.SalesPrice);
+            Invoice dbEntry = context.Invoices.Find(invoiceId);
+            if (dbEntry != null)
+            {
+                dbEntry.InvoiceAmount = newInvoiceAmount;
             }
             context.SaveChanges();
         }

@@ -4,17 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <h2>Wystawione faktury</h2>
     <table class="table">
         <tr>
             <th>
@@ -29,14 +19,11 @@
                 @Html.DisplayFor(modelItem => item.InvoiceNumber)
             </td>
             <td>
-                @Html.ActionLink("Dodaj ", "AddSale", new { item.InvoiceID })
-                @Html.ActionLink("Edit", "Edit", new { item.InvoiceID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.InvoiceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.InvoiceID })
+                @Html.ActionLink("Dodaj pozycje do faktury", "AddSale", new { item.InvoiceID }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Edit", "Edit", new { item.InvoiceID }, new { @class = "btn btn-default" }) 
+                @Html.ActionLink("Details", "Details", new { item.InvoiceID }, new { @class = "btn btn-default" }) 
             </td>
         </tr>
     }
     
     </table>
-</body>
-</html>

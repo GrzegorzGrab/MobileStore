@@ -13,5 +13,8 @@ namespace MobileStore.Domain.Abstract
 
         //zapisanie fakury w bazie 
         void SaveInvoice(Invoice invoice);
+
+        //aktualizacja kwoty faktury w przypdku rejestracji sprzedazy towaru
+        void EditInvoiceAmount(int invoiceId);
     }
 }

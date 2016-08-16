@@ -21,13 +21,13 @@ namespace MobileStore.WebUI.Controllers
         private ISaleRepository iSaleRepository;
 
 
-        public InvoiceController (IInvoiceRepository iInvoiceRepo, ICommodityRepository iCommodityRep)
+        public InvoiceController(IInvoiceRepository iInvoiceRepo, ICommodityRepository iCommodityRep)
         {
             iInvoiceRepository = iInvoiceRepo;
             iCommodityRepository = iCommodityRep;
         }
 
-        public InvoiceController (ICommodityRepository iCommodityRep)
+        public InvoiceController(ICommodityRepository iCommodityRep)
         {
             iCommodityRepository = iCommodityRep;
         }
@@ -38,7 +38,7 @@ namespace MobileStore.WebUI.Controllers
             iSaleRepository = iSaleRepo;
         }
 
-        public InvoiceController (IInvoiceRepository iInvoiceRepo, ICommodityRepository iCommodityRepo, ISellerRepository iSellerRepo,
+        public InvoiceController(IInvoiceRepository iInvoiceRepo, ICommodityRepository iCommodityRepo, ISellerRepository iSellerRepo,
                                    IProductModelRepository iProductModelRepo, IProducerRepository iProducerRepo,
                                    ISimLockerRepository iSimLockerRepo, ISaleRepository iSaleRepo)
         {
@@ -49,9 +49,9 @@ namespace MobileStore.WebUI.Controllers
             iProducerRepository = iProducerRepo;
             iSimLockerRepository = iSimLockerRepo;
             iSaleRepository = iSaleRepo;
-        }   
-        
-        public InvoiceController (ISaleRepository iSaleRepo)
+        }
+
+        public InvoiceController(ISaleRepository iSaleRepo)
         {
             iSaleRepository = iSaleRepo;
         }
@@ -65,7 +65,7 @@ namespace MobileStore.WebUI.Controllers
         public ViewResult Edit(int invoiceId)
         {
             Invoice inv = iInvoiceRepository.Invoices.FirstOrDefault(i => i.InvoiceID == invoiceId);
-            return View( inv);
+            return View(inv);
         }
 
         [HttpPost]
@@ -96,11 +96,11 @@ namespace MobileStore.WebUI.Controllers
 
         public PartialViewResult AvailableCommodities(int invoiceID)
         {
-           
-            List<CommodityInvoiceViewModel> commodityInvoiceViewModelList = new List<CommodityInvoiceViewModel>();
-            IQueryable<Commodity> commodities = iCommodityRepository.Commodities.Where(c=>c.IsAvailable==true).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
 
-            foreach( Commodity com in commodities)
+            List<CommodityInvoiceViewModel> commodityInvoiceViewModelList = new List<CommodityInvoiceViewModel>();
+            IQueryable<Commodity> commodities = iCommodityRepository.Commodities.Where(c => c.IsAvailable == true).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
+
+            foreach (Commodity com in commodities)
             {
                 CommodityInvoiceViewModel commodityInvoiceViewModel = new CommodityInvoiceViewModel();
                 commodityInvoiceViewModel.Commodity = com;
@@ -117,18 +117,25 @@ namespace MobileStore.WebUI.Controllers
         [HttpPost]
         public ActionResult AddNewSale(int? commodityID)
         {
-            Commodity comm = iCommodityRepository.Commodities.FirstOrDefault(c => c.CommodityID== commodityID);
-            Sale newSale = new Sale { CommodityID=(int)commodityID,
-               InvoiceID=1, SalesDate= DateTime.Now,SalesPrice=0
-             
+            Commodity comm = iCommodityRepository.Commodities.FirstOrDefault(c => c.CommodityID == commodityID);
+            Sale newSale = new Sale { CommodityID = (int)commodityID,
+                InvoiceID = 1, SalesDate = DateTime.Now, SalesPrice = 0
+
             };
             iSaleRepository.SaveSale(newSale);
-            return RedirectToAction(null); 
+            return RedirectToAction(null);
         }
 
         public PartialViewResult InvoiceSale(int invoiceId)
         {
             return PartialView("_InvoiceSale", iSaleRepository.Sales.Where(s => s.InvoiceID == invoiceId));
+        }
+
+        public ViewResult Details(int invoiceId)
+        {
+            Invoice invoiceDetails = new Invoice();
+            invoiceDetails=iInvoiceRepository.Invoices.FirstOrDefault(i => i.InvoiceID == invoiceId);
+            return View(invoiceDetails);
         }
     }
 }

@@ -12,16 +12,18 @@ namespace MobileStore.WebUI.Controllers
     {
         private ISaleRepository iSaleRepository;
         private ICommodityRepository iCommodityRepository;
+        private IInvoiceRepository iInvoiceRepository;
         
         public SaleController (ISaleRepository repo)
         {
             iSaleRepository = repo;
         }
 
-        public SaleController (ISaleRepository iSaleRepo, ICommodityRepository iCommodityRepo)
+        public SaleController (ISaleRepository iSaleRepo, ICommodityRepository iCommodityRepo, IInvoiceRepository iInvoiceRepo)
         {
             iSaleRepository = iSaleRepo;
             iCommodityRepository = iCommodityRepo;
+            iInvoiceRepository = iInvoiceRepo;
         }
 
         public ViewResult Index()
@@ -52,6 +54,7 @@ namespace MobileStore.WebUI.Controllers
                 iSaleRepository.SaveSale(sale);
                 //zmiana dostępności towaru w przypadku sprzedaży   
                 iCommodityRepository.ChangeCommodityAvailability(sale.CommodityID);
+                iInvoiceRepository.EditInvoiceAmount(sale.InvoiceID);
                 return RedirectToAction("AddSale", "Invoice", new { invoiceId = sale.InvoiceID });
             }
             else

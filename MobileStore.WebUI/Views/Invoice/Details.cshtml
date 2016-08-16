@@ -1,0 +1,52 @@
+﻿@model MobileStore.Domain.Entities.Invoice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Faktura</h2>
+
+<div>
+    <h4>Nr: @Model.InvoiceNumber</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=>model.InvoiceAmount)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceID }, new { @class = "btn btn-default" }) 
+    @Html.ActionLink("Back to List", "Index", null,new { @class = "btn btn-default" })
+    <button type="submit" id="showInvoiceSale" class="btn btn-default">Pozycje</button>
+</p>
+
+<div id="InvoiceSale">
+    @{ Html.RenderAction("InvoiceSale", "Invoice", Model.InvoiceID);}
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('#InvoiceSale').hide();
+        $('#showInvoiceSale').click(function () {
+            $('#InvoiceSale').slideToggle(function () {
+                if ($(this).is(':visible')) {
+                    $('#showInvoiceSale').text('Ukryj');
+                } else {
+                    $('#showInvoiceSale').text('Pozycje');
+                }
+            });
+        });//koniec funkcji click dla przyciku showInvoiceSale
+    });//koniec funkcji ready
+</script>
