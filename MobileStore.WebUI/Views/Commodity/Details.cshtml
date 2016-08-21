@@ -1,0 +1,97 @@
+﻿@model MobileStore.Domain.Entities.Commodity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Commodity</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Model
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductModel.ProductModelName)
+        </dd>
+
+        <dt>
+            Producent
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model=>model.ProductModel.Producer.ProducerName)
+        </dd>
+
+        <dt>
+            Typ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductModel.ProductType.ProductTypeName)
+        </dd>
+            
+        <dt>
+            Sprzedawca
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seller.GetFullName)
+        </dd>
+
+        <dt>
+            Blokada SimLock
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SimLocker.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Condition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Condition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAvailable)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { Model.CommodityID }, new { @class = "btn btn-default" }) 
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</p>

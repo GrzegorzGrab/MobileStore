@@ -38,6 +38,7 @@ namespace MobileStore.Domain.Entities
         public virtual SimLocker SimLocker { get; set; }
 
         //GrGr dodanie pola IsAvailable dla porzteb sprzedazy. Towar sprzedany nie jest już dostępny
+        [Display(Name ="Dostępny")]
         public bool IsAvailable { get; set; }
     }
 }

@@ -87,5 +87,17 @@ namespace MobileStore.WebUI.Controllers
             TempData["title"] = "Sprzedane towary";
             return View("Index", iCommodityRepository.Commodities.Where(c => c.IsAvailable == false).Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer));
         }
+
+        public ViewResult Details(int commodityId)
+        {
+            Commodity com= iCommodityRepository.Commodities.Include(p => p.ProductModel.Producer).FirstOrDefault(c => c.CommodityID == commodityId);
+            return View(com);
+        }
+
+        public PartialViewResult _CommodityDetails(int commodityId =1)
+        {
+            Commodity com = iCommodityRepository.Commodities.Include(p => p.ProductModel.Producer).FirstOrDefault(c => c.CommodityID == commodityId);
+            return PartialView(com);
+        }
     }
 }

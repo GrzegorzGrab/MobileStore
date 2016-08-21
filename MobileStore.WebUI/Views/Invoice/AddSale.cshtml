@@ -14,3 +14,8 @@
 <div>
     @{ Html.RenderAction("InvoiceSale", "Invoice", Model.InvoiceID);}
 </div>
+
+<hr />
+<div>
+    @Html.ActionLink("Powrót do listy", "Index", null, new { @class = "btn btn-default" })
+</div>
