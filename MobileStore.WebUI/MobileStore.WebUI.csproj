@@ -321,7 +321,6 @@
     <Content Include="Scripts\jquery-1.12.4.min.map" />
     <Content Include="Views\Commodity\Details.cshtml" />
     <Content Include="Views\Commodity\_CommodityDetails.cshtml" />
-    <Content Include="Views\Invoice\_InvoiceSaleTest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
