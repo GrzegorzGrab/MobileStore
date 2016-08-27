@@ -90,21 +90,24 @@
         @Html.ActionLink("Back to List", "Index")
     </div>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //sprawdzenie czy edycja dotyczy nowego towaru, jeżeli tak ustawienie bieżącej daty
-            if ($('#PurchaseDate').val() == '0001-01-01'){ 
-                var currentDate = new Date();
-                var currentYear = currentDate.getFullYear();
-                var currentMonth = ((currentDate.getMonth().length + 1) === 1) ? (currentDate.getMonth() + 1) : '0' + (currentDate.getMonth() + 1);
-                var currentDay = currentDate.getDate();
-                $('#PurchaseDate').val(currentYear + "-" + currentMonth + "-" + currentDay) ;
-            };//koniec if
+@section scripts
+    {
+       <script type="text/javascript">
+            $(document).ready(function () {
+                //sprawdzenie czy edycja dotyczy nowego towaru, jeżeli tak ustawienie bieżącej daty
+                if ($('#PurchaseDate').val() == '0001-01-01'){ 
+                    var currentDate = new Date();
+                    var currentYear = currentDate.getFullYear();
+                    var currentMonth = ((currentDate.getMonth().length + 1) === 1) ? (currentDate.getMonth() + 1) : '0' + (currentDate.getMonth() + 1);
+                    var currentDay = currentDate.getDate();
+                    $('#PurchaseDate').val(currentYear + "-" + currentMonth + "-" + currentDay) ;
+                };//koniec if
 
-            $('.datepicker').datepicker({
-                format: "yyyy-mm-dd",
-                todayHighlight: true,
-                autoclose: true
-            }); //koniec datepicker
-        });//koniec funkcji ready
-    </script>
+                $('.datepicker').datepicker({
+                    format: "yyyy-mm-dd",
+                    todayHighlight: true,
+                    autoclose: true
+                }); //koniec datepicker
+            });//koniec funkcji ready
+        </script>
+    } 
