@@ -35,10 +35,30 @@ namespace MobileStore.WebUI.Controllers
             iSimLockerRepository = iSimLockerRepo;
         }
         
-        public ViewResult Index()
+        public ViewResult Index(string sortOrder)
         {
             TempData["title"] = "Wszystkie towary";
-            return View(iCommodityRepository.Commodities.Include(s=>s.Seller).Include(l=>l.SimLocker).Include(m=>m.ProductModel).Include(p=>p.ProductModel.Producer));
+            var returnsCommodities = iCommodityRepository.Commodities.Include(s => s.Seller).Include(l => l.SimLocker).Include(m => m.ProductModel).Include(p => p.ProductModel.Producer);
+
+            //sortowanie
+            ViewBag.DateSortParam = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.PurchaseSortParam = sortOrder == "price_asc" ? "price_desc" : "price_asc";
+            switch (sortOrder)
+            {
+                case "Date":
+                    returnsCommodities=returnsCommodities.OrderBy(r => r.PurchaseDate);
+                    break;
+                case "date_desc":
+                    returnsCommodities=returnsCommodities.OrderByDescending(r => r.PurchaseDate);
+                    break;
+                case "price_asc":
+                    returnsCommodities = returnsCommodities.OrderBy(r => r.PurchasePrice);
+                    break;
+                case "price_desc":
+                    returnsCommodities = returnsCommodities.OrderByDescending(r => r.PurchasePrice);
+                    break;
+            }
+            return View(returnsCommodities);
         }
 
         public ViewResult Edit(int commodityId )

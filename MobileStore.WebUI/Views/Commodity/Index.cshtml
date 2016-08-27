@@ -18,10 +18,10 @@
                 @Html.DisplayNameFor(model=>model.ProductModel.Producer.ProducerName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PurchaseDate)
+                @Html.ActionLink("Data zakupu", "Index", new { sortOrder=ViewBag.DateSortParam})
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PurchasePrice)
+                @Html.ActionLink("Kwota zakupu", "Index", new { sortOrder=ViewBag.PurchaseSortParam })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Condition)
@@ -65,7 +65,14 @@
                 @Html.DisplayFor(modelItem => item.SimLocker.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem=>item.IsAvailable)
+                @if (item.IsAvailable)
+                {
+                    <span class="label label-success">Dostępny</span>
+                }
+                else
+                {
+                    <span class="label label-danger">Niedostępny</span>
+                }
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { item.CommodityID }) |
