@@ -10,6 +10,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.InvoiceNumber)
             </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.InvoiceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.InvoiceDate)
+            </th>
             <th></th>
         </tr>
     
@@ -17,6 +23,12 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.InvoiceNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=>item.InvoiceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=>item.InvoiceDate)
             </td>
             <td>
                 @Html.ActionLink("Dodaj pozycje do faktury", "AddSale", new { item.InvoiceID }, new { @class = "btn btn-default" })

@@ -19,5 +19,10 @@ namespace MobileStore.Domain.Entities
         [Display(Name ="Kwota faktury")]
         [DisplayFormat(DataFormatString ="{0:c}")]
         public decimal InvoiceAmount { get; set; }
+
+        [Display(Name ="Data wystawienia")]
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage ="Proszę podać datę wystawienia faktury")]
+        public DateTime InvoiceDate { get; set; }
     }
 }

@@ -31,6 +31,7 @@ namespace MobileStore.Domain.Concrete
                 if (dbEntry != null)
                 {
                     dbEntry.InvoiceNumber = invoice.InvoiceNumber;
+                    dbEntry.InvoiceDate = invoice.InvoiceDate;
                 }
             }
             context.SaveChanges();

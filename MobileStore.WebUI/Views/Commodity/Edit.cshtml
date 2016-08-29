@@ -82,20 +82,18 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save" class="btn btn-default" />
+                    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-default" })
                 </div>
             </div>
         </div>
     }
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 
 @section scripts
     {
        <script type="text/javascript">
             $(document).ready(function () {
                 //sprawdzenie czy edycja dotyczy nowego towaru, jeżeli tak ustawienie bieżącej daty
-                if ($('#PurchaseDate').val() == '0001-01-01'){ 
+                if ($('#PurchaseDate').val() == '0001-01-01' || $('#PurchaseDate').val() == '1/1/0001'){ 
                     var currentDate = new Date();
                     var currentYear = currentDate.getFullYear();
                     var currentMonth = ((currentDate.getMonth().length + 1) === 1) ? (currentDate.getMonth() + 1) : '0' + (currentDate.getMonth() + 1);

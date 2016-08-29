@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<MobileStore.Domain.Entities.Commodity>
 
 @{
-   // Layout = null;
+// Layout = null;
 }
 
-
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success" role="alert">@TempData["message"]</div>
+}
     <h4>@TempData["title"]</h4>
     <table class="table">
         <tr>

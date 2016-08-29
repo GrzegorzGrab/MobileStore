@@ -77,7 +77,7 @@ namespace MobileStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
                 iCommodityRepository.SaveCommodity(commodity);
-                TempData["message"] = string.Format("Zapisano:  {0}", commodity.CommodityID);
+                TempData["message"] = string.Format("Zapisano towar id {0}", commodity.CommodityID);
                 return RedirectToAction("Index");
             }
             else
